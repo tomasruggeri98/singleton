@@ -1,0 +1,29 @@
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+    public int score = 0;
+    public int pointsToWin = 10;
+
+    void Update()
+    {
+        // Verifica si el jugador ha ganado el nivel
+        if (score >= pointsToWin)
+        {
+            CompleteLevel();
+        }
+    }
+
+    void CompleteLevel()
+    {
+        // Llama al SoundManager para reproducir un efecto de sonido de victoria
+        SoundManager.instance.PlayExplosionSound();
+        Debug.Log("Level Completed!");
+        // Aquí podrías agregar lógica para cargar el siguiente nivel
+    }
+
+    public void AddScore(int points)
+    {
+        score += points;
+    }
+}
