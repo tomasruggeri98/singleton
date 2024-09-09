@@ -1,0 +1,4 @@
+Resumen:
+SoundManager: Controla los efectos de sonido y es un Singleton.
+PlayerController: Controla las acciones del jugador e interactúa con el SoundManager para reproducir el sonido de disparo.
+GameManager: Supervisa el estado del juego y usa el SoundManager para reproducir efectos de sonido en condiciones específicas, como completar el nivel.
