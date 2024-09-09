@@ -1,0 +1,48 @@
+using UnityEngine;
+
+public class SoundManager : MonoBehaviour
+{
+    public static SoundManager instance;
+
+    public AudioSource shootSound;
+    public AudioSource explosionSound;
+
+    private void Awake()
+    {
+        // Singleton pattern: ensures only one instance exists
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // Persists across scenes
+        }
+        else
+        {
+            Destroy(gameObject); // Destroy duplicate
+        }
+    }
+
+    // Play the shooting sound effect
+    public void PlayShootSound()
+    {
+        if (shootSound != null)
+        {
+            shootSound.Play();
+        }
+    }
+
+    // Play the explosion sound effect
+    public void PlayExplosionSound()
+    {
+        if (explosionSound != null)
+        {
+            explosionSound.Play();
+        }
+    }
+
+    // Stop all sounds
+    public void StopAllSounds()
+    {
+        shootSound.Stop();
+        explosionSound.Stop();
+    }
+}
