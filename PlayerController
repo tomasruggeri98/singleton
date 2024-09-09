@@ -1,0 +1,20 @@
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{
+    public void Update()
+    {
+        // Simula el disparo del jugador con la tecla 'Space'
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
+    }
+
+    void Shoot()
+    {
+        // Llama al método del SoundManager para reproducir el sonido de disparo
+        SoundManager.instance.PlayShootSound();
+        Debug.Log("Player shot!");
+    }
+}
